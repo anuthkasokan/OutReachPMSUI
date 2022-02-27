@@ -1,0 +1,71 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-warning">
+                      <h4 class="card-title">Assign Role</h4>
+                      <p class="card-title">Assign/update role</p>
+                  </div><br />
+                  <div class="card-body">
+                      <form [formGroup]="updateUserForm" (ngSubmit)="onSubmit()">
+                          <div class="row">
+                              <div class="col-md-6">
+                              <mat-form-field class="example-full-width" id="autoFormField">
+                                <input type="hidden" [value]="userSelected" name="user" [(ngModel)]="userSelected" formControlName="userid"/>
+                                  <input type="text" id="username" placeholder="Select User*" aria-label="Number"  matInput [formControl]="myControl" [matAutocomplete]="auto"  id="txtUsername" maxlength="20" formControlName="username">
+                                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn"  (optionSelected)='onUserChange($event.option.value)' id="autoUsername" >
+                                    <mat-option *ngFor="let user of filteredOptions | async" [value]="user" name="username">
+                                      {{user.username}}
+                                    </mat-option>
+                                  </mat-autocomplete>
+                                </mat-form-field>
+                                <span *ngIf="!updateUserForm.get('userid').valid" class="help-block">please select a valid user</span>
+                              </div>
+                              <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                  <mat-select id="role" placeholder="Select Role*" name="role" [(ngModel)]="roleSelected" (selectionChange) ="onRoleChange($event)" formControlName="roleid">
+                                    <mat-option *ngFor="let role of roles" [value]="role.RoleID">
+                                      {{role.RoleName}}
+                                    </mat-option>
+                                  </mat-select>                      
+                                </mat-form-field>
+                                </div>
+                          </div>
+                          <div *ngIf="poc" class="row">
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-select placeholder="Select City*" id="city" name="city" [(ngModel)]="roleCitySelected" (selectionChange) ="onCityChange($event)" formControlName="cityid">
+                                        <mat-option *ngFor="let city of cities" [value]="city.cityid">
+                                          {{city.cityname}}
+                                        </mat-option>
+                                      </mat-select>                      
+                                    </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                      <mat-select placeholder="Select School*" id="school" name="school" [(ngModel)]="roleSchoolSelected" formControlName="schoolid" >
+                                        <mat-option *ngFor="let school of schools" [value]="school.schoolid">
+                                          {{school.schoolname}}
+                                        </mat-option>
+                                      </mat-select>                      
+                                    </mat-form-field>
+                            </div>
+                              <!--<div class="col-md-4">
+                                <mat-form-field class="example-full-width">
+                                    <mat-slide-toggle matInput (color)='success'>Active</mat-slide-toggle>
+                                </mat-form-field> 
+                              </div>-->
+                          </div>
+
+                          <br />
+                          <button mat-raised-button type="submit" class="btn btn-warning fa-pull-right">Update User</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+         
+      </div>
+  </div>
+</div>

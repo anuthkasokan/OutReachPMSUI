@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-wrapper">
+          <a class="navbar-brand" href="javascript:void(0)" style="margin-top:-33px !important;"><h3><b>{{getTitle()}}</b></h3></a>
+        </div>
+        <button mat-raised-button class="navbar-toggler" type="button" (click)="sidebarToggle()">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <a class="navbar-brand" href="javascript:void(0)" style="margin-top: 20px;"><h4><b>Performance Management System</b></h4></a>            
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link"  (click)="printPage()">
+                      <h3><i class="material-icons">print</i></h3>  
+                        <p>
+                            <span class="d-lg-none d-md-block">Print Page</span>
+                        </p>
+                    </a>
+                </li>
+           
+                <li class="nav-item">
+                    <a class="nav-link" href="#pablo">
+                       <h3><i class="material-icons">person</i></h3>
+                        <p>
+                            <span class="d-lg-none d-md-block">{{username}}</span>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><br />

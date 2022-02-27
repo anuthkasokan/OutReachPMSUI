@@ -1,0 +1,157 @@
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 col-md-6 col-md-6">
+
+        <mat-form-field>
+                <mat-select placeholder="Select Group*" (selectionChange) ="onGroupChange($event)" [(ngModel)]="groupSelected">
+                  <mat-option *ngFor="let group of groups" [value]="group.groupid">
+                    {{group.groupname}}
+                  </mat-option>
+                </mat-select>
+
+              </mat-form-field>
+              <button mat-raised-button class="card-value card-stats" (click)="goBack()"><i class="material-icons">keyboard_return</i> Back</button>
+            <!--  <button mat-raised-button color="primary">+ Compare</button>
+              <span class="col-lg-1"></span>  <button mat-raised-button color="warn">Add Filter</button> -->
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<br /><br />
+
+<div class="row">
+
+      <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="card card-stats">
+             <div class="card-header card-header-warning card-header-icon">
+                    <!--<div class="card-icon">-->
+                    <div id="dvGroupAttendance"  class="stardiagram" matTooltip="day wise performance star"  matTooltipPosition="right" matTooltipClass="primary-tooltip">  
+                        </div>    
+                 <!-- </div>-->
+                  <p class="card-category">{{alterParameter.Attendance}}</p>
+                  <h3 class="card-title card-value">{{starData.Attendance}}/{{starData.MonthlyTotal}}
+                     
+                  </h3>
+              </div>
+              <div class="card-footer">
+                <div class="stats card-value">
+                    <i class="material-icons">date_range</i> Last 1 month
+                </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-sm-12">
+          <div class="card card-stats">
+              <div class="card-header card-header-success card-header-icon">
+                    <div id="dvGroupDiscipline" class="stardiagram" matTooltip="day wise performance star"  matTooltipPosition="right" matTooltipClass="primary-tooltip">
+  
+                        </div>    
+                  <p class="card-category ">{{alterParameter.Discipline}}</p>
+                  <h3 class="card-title card-value">{{starData.Discipline}}/{{starData.MonthlyTotal}}</h3>
+              </div>
+              <div class="card-footer">
+                  <div class="stats card-value">
+                      <i class="material-icons">date_range</i> Last 1 month
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                        <div id="dvGroupHomework" class="stardiagram" matTooltip="day wise performance star"  matTooltipPosition="right" matTooltipClass="primary-tooltip">
+                                
+                            </div>  
+                    <p class="card-category">{{alterParameter.Homework}}</p>
+                    <h3 class="card-title card-value">{{starData.Homework}}/{{starData.MonthlyTotal}}</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats card-value">
+                      <i class="material-icons">date_range</i> Last 1 month
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+<br />
+
+<div class="row">
+  <div class="col-lg-2 col-md-12"></div>
+  <div class="col-lg-8 col-md-12">
+      <div class="card card-chart">
+          <div class="card-header card-header-warning">
+              <div class="ct-chart" id="dailySalesChart"></div>
+          </div>
+          <div class="card-body">
+              <h4 class="card-category">Group Performance Chart</h4>
+              <p class="card-category" id="spGroupInc">
+              </p>
+          </div>
+          <div class="card-footer">
+              <div class="stats">
+                  <i class="material-icons">access_time</i> updated 4 minutes ago
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="col-lg-2 col-md-12"></div>
+</div>
+<div class="row">
+  <div  *ngIf="fromSchool" class="card perfect-scrollbar-on" style="height:305px;">
+    <div class="card-header card-header-warning">
+        <h4 class="card-title">Class Wise Group Performance</h4>
+        <p class="card-title">for the month of {{currentMonth}},2019</p>
+    </div>
+    <div class="card-body table-responsive">
+        <table class="table table-hover">
+            <thead class="text-warning">
+                <th>Class</th>
+                <th>{{alterParameter.Attendance}}</th>
+                <th>{{alterParameter.Discipline}}</th>
+                <th>{{alterParameter.Homework}}</th>
+                <th>Points</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let class of classes">
+                    <td [hidden]=true>{{class.ClassId}}</td>
+                    <td>{{class.ClassName}}</td>
+                    <td>{{class.Attendance}}</td>
+                    <td>{{class.Discipline}}</td>
+                    <td>{{class.Homework}}</td>
+                    <td>{{class.Points}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+  <div *ngIf="fromClass" class="card perfect-scrollbar-on" style="height:305px;">
+      <div class="card-header card-header-warning">
+          <h4 class="card-title">Student Wise Group Performance</h4>
+          <p class="card-title">for the month of {{currentMonth}},2019</p>
+      </div>
+      <div class="card-body table-responsive">
+          <table class="table table-hover">
+              <thead class="text-warning">
+                  <th>Student Name</th>
+                  <th>{{alterParameter.Attendance}}</th>
+                  <th>{{alterParameter.Discipline}}</th>
+                  <th>{{alterParameter.Homework}}</th>
+                  <th>Points</th>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let student of students">
+                      <td [hidden]=true>{{student.StudentId}}</td>
+                      <td>{{student.StudentName}}</td>
+                      <td>{{student.Attendance}}</td>
+                      <td>{{student.Discipline}}</td>
+                      <td>{{student.Homework}}</td>
+                      <td>{{student.Points}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+

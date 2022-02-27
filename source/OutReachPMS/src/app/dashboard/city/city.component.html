@@ -1,0 +1,129 @@
+
+<div class="row">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 col-md-6 col-md-6">
+
+        <mat-form-field>
+                <mat-select placeholder="Select City*" (selectionChange) ="onCityChange($event)" [(ngModel)]="citySelected">
+                  <mat-option *ngFor="let city of cities" [value]="city.cityid">
+                    {{city.cityname}}
+                  </mat-option>
+                </mat-select>
+
+              </mat-form-field>
+            <!--  <button mat-raised-button color="primary">+ Compare</button>
+              <span class="col-lg-1"></span>  <button mat-raised-button color="warn">Add Filter</button> -->
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<br /> <br />
+ <div class="row">
+    <!--<div class="col-lg-1"></div>-->
+  <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="card card-stats">
+         <div class="card-header card-header-warning card-header-icon">
+               
+                <div id="dvCityAttendance" class="stardiagram" matTooltip="day wise performance star"  matTooltipPosition="right" matTooltipClass="primary-tooltip">
+                                            
+                    </div>    
+            
+              <p class="card-category">Attendance</p>
+              <h3 class="card-title card-value">{{starData.Attendance}}/{{starData.MonthlyTotal}}</h3>
+          </div>
+          <div class="card-footer">
+            <div class="stats card-value">
+                <i class="material-icons">date_range</i> Last 1 month
+            </div>
+        </div>
+      </div>
+  </div>
+  <!--<div class="col-lg-1"></div>-->
+  <div class="col-lg-4 col-md-12 col-sm-12">
+      <div class="card card-stats">
+          <div class="card-header card-header-success card-header-icon">
+                <div id="dvCityDiscipline" class="stardiagram"  matTooltip="day wise performance star"  matTooltipPosition="right" matTooltipClass="primary-tooltip">                    
+                        
+                    </div>    
+              <p class="card-category">Discipline</p>
+              <h3 class="card-title card-value">{{starData.Discipline}}/{{starData.MonthlyTotal}}</h3>
+          </div>
+          <div class="card-footer">
+              <div class="stats card-value">
+                  <i class="material-icons">date_range</i> Last 1 month
+              </div>
+          </div>
+      </div>
+  </div>
+ <!-- <div class="col-lg-1"></div>-->
+  <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="card card-stats">
+            <div class="card-header card-header-danger card-header-icon">
+                    <div id="dvCityHomework" class="stardiagram"  matTooltip="day wise performance star" matTooltipPosition="right" matTooltipClass="primary-tooltip">
+   
+                        </div>  
+                <p class="card-category">HomeWork</p>
+                <h3 class="card-title card-value">{{starData.Homework}}/{{starData.MonthlyTotal}}</h3>
+            </div>
+            <div class="card-footer">
+              <div class="stats card-value">
+                  <i class="material-icons">date_range</i> Last 1 month
+              </div>
+          </div>
+        </div>
+    </div>
+   <!-- <div class="col-lg-1"></div>-->
+</div>
+<br />
+<div class="row">
+
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 col-sm-12 col-md-12">
+      <div class="card card-chart">
+          <div class="card-header card-header-warning">
+              <div class="ct-chart" id="dailySalesChart"></div>
+          </div>
+          <div class="card-body">
+              <h4 class="card-category">City Performance Chart</h4>
+              <p class="card-category" id="spCityInc">
+                <!--  <span class="text-success"><i class="fa fa-long-arrow-up"></i> 10% </span> increase in performance.--></p>
+          </div>
+          <div class="card-footer">
+              <div class="stats">
+                  <i class="material-icons">access_time</i> updated 4 minutes ago
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+<div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8 col-sm-12 col-md-12">
+        <div class="card perfect-scrollbar-on" style="height:305px;">
+            <div class="card-header card-header-warning">
+                <h4 class="card-title">School Wise Performance</h4>
+                <p class="card-title">for the month of {{currentMonth}},2019</p>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+                        <th>School Name</th>
+                        <th>Attendance</th>
+                        <th>Discipline</th>
+                        <th>HomeWork</th>
+                        <th>Points</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let school of schools" (click)="goToSchool(school)" matTooltip="select school to have a detailed view" matTooltipClass="primary-tooltip">
+                            <td [hidden]=true>{{school.SchoolId}}</td>
+                            <td>{{school.SchoolName}}</td>
+                            <td>{{school.Attendance}}</td>
+                            <td>{{school.Discipline}}</td>
+                            <td>{{school.Homework}}</td>
+                            <td>{{school.Points}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+ </div>
+</div>

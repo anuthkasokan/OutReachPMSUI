@@ -1,0 +1,156 @@
+
+body{
+    background-color: white;
+}
+.sidebar-wrapper{
+    background-color: #3c3b37;
+}
+
+.logo{
+    background-color: #3c3b37;
+}
+
+.primary-tooltip {
+    /* your own custom styles here */ 
+    /* e.g. */
+    background-color: #3c3b37;
+    color: #ff9800 !important;
+}
+
+.sidebar .nav p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+    position: relative;
+    display: block;
+    height: auto;
+    white-space: nowrap;
+    color: white;
+}
+
+.card-category{
+    color:#ff9800 !important;
+}
+
+.card-stats{
+    background-color: #3c3b37;
+    padding: 10px 0px 0px 10px
+}
+
+.card-value{
+    color:#ff9800 !important; 
+}
+
+.card-chart{
+    background-color: #3c3b37;
+}
+
+div.stardiagram{
+    position: relative;
+    height: 93px;
+    width: 209px;
+    margin: 0px 0px 10px -222px;
+    }
+    div.stardiagram img{
+        width:20px;
+        position: absolute;
+        }
+
+        div.stardiagram img.img1{
+            margin: 88px 0px 0px 94px;
+        }
+
+
+div.stardiagram img.img2{
+    margin: 70px 0px 0px 80px;  
+}
+div.stardiagram img.img3{
+    margin: 70px 0px 0px 107px  
+}
+div.stardiagram img.img4{
+    margin: 71px 0px 0px 111px;width: 27px;
+}
+div.stardiagram img.img5{
+    margin: 90px 0px 0px 114px;width: 31px;
+}
+div.stardiagram img.img6{
+    margin: 101px 0px 0px 112px;width: 32px; 
+}
+div.stardiagram img.img7{
+    margin: 103px 0px 0px 106px;width: 16px;
+}
+div.stardiagram img.img8{
+    margin: 102px 0px 0px 83px;width: 17px;
+}
+
+div.stardiagram img.img9{
+    margin: 101px 0px 0px 64px;width: 32px;
+}
+div.stardiagram img.img10{
+    margin: 91px 0px 0px 61px;width: 32px; 
+}
+div.stardiagram img.img11{
+    margin: 71px 0px 0px 69px;width: 30px;
+}
+div.stardiagram img.img12{
+    margin: 43px 0px 0px 81px;
+}
+
+div.stardiagram img.img13{
+    margin: 42px 0px 0px 107px;
+}
+div.stardiagram img.img14{
+    margin: 72px 0px 0px 136px;width: 36px;
+}
+div.stardiagram img.img15{
+    margin: 81px 0px 0px 144px; width: 29px;
+}
+div.stardiagram img.img16{
+    margin: 112px 0px 0px 129px;width: 18px;
+}
+div.stardiagram img.img17{
+    margin: 124px 0px 0px 108px;width: 34px;
+}
+div.stardiagram img.img18{
+    margin: 124px 0px 0px 65px;width: 35px;
+}
+div.stardiagram img.img19{
+    margin: 112px 0px 0px 60px;width: 17px;
+}
+div.stardiagram img.img20{
+    margin: 80px 0px 0px 33px;;width: 29px;
+}
+div.stardiagram img.img21{
+    width: 35px;margin: 70px 0px 0px 37px;
+}
+div.stardiagram img.img22{
+    margin: 3px 0px 0px 77px;width: 26px;
+}
+div.stardiagram img.img23{
+    margin: 2px 0px 0px 104px;width: 26px;
+}
+div.stardiagram img.img24{
+    margin: 69px 0px 0px 135px;width: 73px;height:9px;
+}
+div.stardiagram img.img25{
+    margin: 71px 0px 0px 149px;width: 60px;height:38px;
+}
+div.stardiagram img.img26{
+    margin: 114px 0px 0px 148px;width: 23px;
+}
+div.stardiagram img.img27{
+    margin: 136px 0px 0px 107px;width: 63px;height:29px;
+}
+div.stardiagram img.img28{
+    margin: 135px 0px 0px 37px;width: 64px;height:33px;
+}
+div.stardiagram img.img29{
+    margin: 112px 0px 0px 36px;width: 22px;height:55px;
+}
+div.stardiagram img.img30{
+    margin: 69px 0px 0px -2px;width: 56px;height:38px;
+}
+div.stardiagram img.img31{
+    margin: 68px 0px 0px 0px; width: 70px;height:10px;
+}
+

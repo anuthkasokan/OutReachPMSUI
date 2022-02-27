@@ -1,0 +1,110 @@
+/* You can add global styles to this file, and also import other style files */
+
+div.picture1{
+    position:relative;
+    height: 168px;
+    width: 209px;
+    }
+    div.picture1 img{
+        width:20px;
+        position:fixed;
+        }
+
+        div.picture1 img.img1{
+            margin: 88px 0px 0px 94px;
+        }
+
+
+div.picture1 img.img2{
+    margin: 70px 0px 0px 80px;  
+}
+div.picture1 img.img3{
+    margin: 70px 0px 0px 107px  
+}
+div.picture1 img.img4{
+    margin: 71px 0px 0px 111px;width: 27px;
+}
+div.picture1 img.img5{
+    margin: 90px 0px 0px 114px;width: 31px;
+}
+div.picture1 img.img6{
+    margin: 101px 0px 0px 112px;width: 32px; 
+}
+div.picture1 img.img7{
+    margin: 103px 0px 0px 106px;width: 16px;
+}
+div.picture1 img.img8{
+    margin: 102px 0px 0px 83px;width: 17px;
+}
+
+div.picture1 img.img9{
+    margin: 101px 0px 0px 64px;width: 32px;
+}
+div.picture1 img.img10{
+    margin: 91px 0px 0px 61px;width: 32px; 
+}
+div.picture1 img.img11{
+    margin: 71px 0px 0px 69px;width: 30px;
+}
+div.picture1 img.img12{
+    margin: 43px 0px 0px 81px;
+}
+
+div.picture1 img.img13{
+    margin: 42px 0px 0px 107px;
+}
+div.picture1 img.img14{
+    margin: 70px 0px 0px 136px;width: 36px;
+}
+div.picture1 img.img15{
+    margin: 81px 0px 0px 144px; width: 29px;
+}
+div.picture1 img.img16{
+    margin: 112px 0px 0px 129px;width: 18px;
+}
+div.picture1 img.img17{
+    margin: 124px 0px 0px 108px;width: 34px;
+}
+div.picture1 img.img18{
+    margin: 124px 0px 0px 65px;width: 35px;
+}
+div.picture1 img.img19{
+    margin: 112px 0px 0px 60px;width: 17px;
+}
+div.picture1 img.img20{
+    margin: 83px 0px 0px 34px;width: 29px;
+}
+div.picture1 img.img21{
+    width: 35px;margin: 70px 0px 0px 37px;
+}
+div.picture1 img.img22{
+    margin: 3px 0px 0px 77px;width: 26px;
+}
+div.picture1 img.img23{
+    margin: 2px 0px 0px 104px;width: 26px;
+}
+div.picture1 img.img24{
+    margin: 69px 0px 0px 135px;width: 73px;height:9px;
+}
+div.picture1 img.img25{
+    margin: 71px 0px 0px 149px;width: 60px;height:38px;
+}
+div.picture1 img.img26{
+    margin: 114px 0px 0px 148px;width: 23px;
+}
+div.picture1 img.img27{
+    margin: 136px 0px 0px 107px;width: 63px;height:29px;
+}
+div.picture1 img.img28{
+    margin: 135px 0px 0px 37px;width: 64px;height:33px;
+}
+div.picture1 img.img29{
+    margin: 112px 0px 0px 36px;width: 22px;height:55px;
+}
+div.picture1 img.img30{
+    margin: 69px 0px 0px -2px;width: 56px;height:38px;
+}
+div.picture1 img.img31{
+    margin: 68px 0px 0px 0px; width: 70px;height:10px;
+}
+

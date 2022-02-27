@@ -1,0 +1,111 @@
+
+<div class="main-content">
+
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h4 class="card-title">Upload/Download</h4>
+                        <p class="card-title">Upload/Download Excel Data</p>
+                    </div>
+                    <div class="card-body">
+                        <br />
+                            <div class="row">
+                            <div class="col-md-12"> <p>For uploading/downloading excel sheets please do the following:</p></div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-8"> <p>1. Download the sample sheet</p></div>
+                                <div class="col-md-4">
+                                    <a mat-raised-button href="../../assets/files/sample_performance_file.xlsx" class="btn btn-primary fa-pull-right">Download Sample Sheet</a>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-8"> <p>2. Fill the data in the sheet</p></div>
+                                <div class="col-md-4">
+                                    <a mat-raised-button href="../../assets/files/stardiagram.png" class="btn btn-primary fa-pull-right" download>Download Sample Star</a>
+                                </div>        
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-8"> <p>3. Upload the sheet</p></div>
+                                <div class="col-md-4">
+                                        <button mat-raised-button type="button" class="btn btn-primary fa-pull-right" (click)="onCLickView()">Upload/Edit Data</button>
+                                    </div>
+                            </div>
+<br />
+                            <div class="row"  *ngIf="showFilter">
+                                        <div class="col-md-6">
+                                                <mat-form-field>
+                                                    <mat-select placeholder="Select City*" id="city" name="city" [(ngModel)]="filterCitySelected" (selectionChange) ="onCityChange($event)">
+                                                      <mat-option *ngFor="let city of cities" [value]="city.cityid">
+                                                        {{city.cityname}}
+                                                      </mat-option>
+                                                    </mat-select>                      
+                                                  </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field>
+                                                    <mat-select placeholder="Select School*" id="school" name="school" [(ngModel)]="filterSchoolSelected" (selectionChange) ="onSchoolChange($event)">
+                                                      <mat-option *ngFor="let school of schools" [value]="school.schoolid">
+                                                        {{school.schoolname}}
+                                                      </mat-option>
+                                                    </mat-select>                      
+                                                  </mat-form-field>
+                                          </div>
+                            </div>
+
+                            <div class="row"  *ngIf="showFilter">
+                                    <div class="col-md-6">
+                                            <mat-form-field>
+                                                <mat-select placeholder="Select Class*" id="class" name="class" [(ngModel)]="filterClassSelected">
+                                                  <mat-option *ngFor="let class of classes" [value]="class.classid">
+                                                    {{class.classname}}
+                                                  </mat-option>
+                                                </mat-select>                      
+                                              </mat-form-field>
+                                      </div>
+                                      <div class="col-md-6">
+                                            <mat-form-field>
+                                                    <input id="addDate" matInput [matDatepicker]="dp3"  [max]="maxDate" placeholder="Select Date" disabled [(ngModel)]="filterDateSelected">
+                                                    <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                                                    <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                                                  </mat-form-field>
+                                      </div>
+                            </div>
+
+                            <div class="row" *ngIf="showFilter">
+                                <div class="col-md-12">
+                                 <button mat-raised-button type="button" (click)="openDialog()" class="btn btn-warning fa-pull-right">Search</button>
+                                </div>
+                            </div><br />
+
+                            <div class="row">
+                                <hr>
+                                <div [fileUploadInputFor]="fileUploadQueue" class="col-md-12 upload-drop-zone">
+                                    Just drag and drop files here
+                                </div>
+                                    <hr>
+                                    <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <mat-file-upload-queue #fileUploadQueue
+                                        [fileAlias]="'file'"
+                                        [httpUrl]="'http://localhost:49572/api/File/upload'"  multiple>
+                                    
+                                        <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+                                    </mat-file-upload-queue>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                    </div>
+                </div>
+            </div>
+               
+        </div>
+
+  </div>
+</div>
